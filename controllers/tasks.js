@@ -30,7 +30,7 @@ const deleteTask = asyncWrapper(async (req, res, next) => {
 })
 const updateTask = asyncWrapper(async (req, res, next) => {
   const { id: taskID } = req.params
-
+console.log(taskID)
   const task = await Task.findOneAndUpdate({ _id: taskID }, req.body, {
     new: true,
     runValidators: true,
